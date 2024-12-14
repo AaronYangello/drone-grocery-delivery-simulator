@@ -1,0 +1,45 @@
+make_store,kroger,33000
+display_stores
+sell_item,kroger,pot_roast,5
+sell_item,kroger,cheesecake,4
+display_items,kroger
+make_drone,kroger,1,40,3
+display_drones,kroger
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+start_order,kroger,purchaseA,1,aapple2
+request_item,kroger,purchaseA,pot_roast,3,9
+request_item,kroger,purchaseA,cheesecake,1,4
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+config list
+config show drone-alert kroger
+config set drone-alert kroger 3
+config show drone-alert kroger
+config show error-message
+unknown_command
+config set error-message cmd-not-found Please enter a correct command to proceed.
+config show error-message
+unknown_command
+config show favorite-order aapple2
+config set favorite-order aapple2 purchaseA
+config show favorite-order aapple2
+config show min-credit kroger
+config set min-credit kroger 10
+config show min-credit kroger
+config show min-rating kroger
+config set min-rating kroger 3
+config show min-rating kroger
+config show pilot-probation kroger
+config set pilot-probation kroger 4
+config show pilot-probation kroger
+config show pilot-vacation ffig8
+config set pilot-vacation ffig8 2021-06-01
+config set pilot-vacation ffig8 2022-06-01
+config show pilot-vacation ffig8
+config show price-alert aapple2
+config set price-alert aapple2 kroger pot_roast
+config show price-alert aapple2
+config set price-alert aapple2 kroger cheesecake
+config show price-alert aapple2
+stop

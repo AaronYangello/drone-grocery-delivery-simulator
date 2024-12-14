@@ -1,0 +1,132 @@
+Welcome to the Grocery Express Delivery Service!
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> sell_item,kroger,pot_roast,5
+OK:change_completed
+> sell_item,kroger,cheesecake,4
+OK:change_completed
+> display_items,kroger
+cheesecake,4
+pot_roast,5
+OK:display_completed
+> make_drone,kroger,1,40,3
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3
+OK:display_completed
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100
+OK:display_completed
+> start_order,kroger,purchaseA,1,aapple2
+OK:change_completed
+> request_item,kroger,purchaseA,pot_roast,3,9
+OK:change_completed
+> request_item,kroger,purchaseA,cheesecake,1,4
+OK:change_completed
+> make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+OK:change_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:33
+OK:display_completed
+> config list
+drone-alert	config set drone-alert [store-name] [number-of-trips]
+error-message	config set error-message [error] [error-message-text]
+favorite-order	config set favorite-order [customer-account] [order]
+min-credit	config set min-credit [store-name] [min-credit-required]
+min-rating	config set min-rating [store-name] [min-rating-required]
+pilot-probation	config set pilot-probation [store-name] [num-trips-to-complete]
+pilot-vacation	config set pilot-vacation [pilot-account] [yyyy-mm-dd]
+price-alert	config set price-alert [customer-account] [store-name] [item]
+show	config show [setting]
+OK:display_completed
+> config show drone-alert kroger
+5
+OK:display_completed
+> config set drone-alert kroger 3
+OK:change_completed
+> config show drone-alert kroger
+3
+OK:display_completed
+> config show error-message
+name:cmd-not-found,error-message:This command is not recognized. Please try again.
+name:generic,error-message:Something went wrong. Please try again
+name:incorrect-arg-type,error-message:One or more of your arguments are of the wrong type. Please try again.
+name:incorrect-num-args,error-message:Incorrect number of arguments. Please try again.
+name:server-error,error-message:Something went wrong with your request.
+OK:display_completed
+> unknown_command
+Error: This command is not recognized. Please try again. 
+> config set error-message cmd-not-found Please enter a correct command to proceed.
+OK:change_completed
+> config show error-message
+name:cmd-not-found,error-message:Please enter a correct command to proceed.
+name:generic,error-message:Something went wrong. Please try again
+name:incorrect-arg-type,error-message:One or more of your arguments are of the wrong type. Please try again.
+name:incorrect-num-args,error-message:Incorrect number of arguments. Please try again.
+name:server-error,error-message:Something went wrong with your request.
+OK:display_completed
+> unknown_command
+Error: Please enter a correct command to proceed. 
+> config show favorite-order aapple2
+OK:display_completed
+> config set favorite-order aapple2 purchaseA
+OK:change_completed
+> config show favorite-order aapple2
+name:purchaseA,lines:
+	item:cheesecake,quantity:1
+	item:pot_roast,quantity:3
+OK:display_completed
+> config show min-credit kroger
+0
+OK:display_completed
+> config set min-credit kroger 10
+OK:change_completed
+> config show min-credit kroger
+10
+OK:display_completed
+> config show min-rating kroger
+0
+OK:display_completed
+> config set min-rating kroger 3
+OK:change_completed
+> config show min-rating kroger
+3
+OK:display_completed
+> config show pilot-probation kroger
+0
+OK:display_completed
+> config set pilot-probation kroger 4
+OK:change_completed
+> config show pilot-probation kroger
+4
+OK:display_completed
+> config show pilot-vacation ffig8
+OK:display_completed
+> config set pilot-vacation ffig8 2021-06-01
+Please select a future date.
+> config set pilot-vacation ffig8 2022-06-01
+OK:change_completed
+> config show pilot-vacation ffig8
+2022-06-01
+OK:display_completed
+> config show price-alert aapple2
+OK:display_completed
+> config set price-alert aapple2 kroger pot_roast
+OK:change_completed
+> config show price-alert aapple2
+item:pot_roast
+OK:display_completed
+> config set price-alert aapple2 kroger cheesecake
+OK:change_completed
+> config show price-alert aapple2
+item:cheesecake
+item:pot_roast
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

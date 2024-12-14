@@ -1,0 +1,34 @@
+login,admin,admin
+make_store,kroger,33000
+display_stores
+sell_item,kroger,pot_roast,5
+sell_item,kroger,cheesecake,4
+display_items,kroger
+make_drone,kroger,1,40,3
+display_drones,kroger
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+make_customer,ccherry4,Carlos,Cherry,444-444-4444,5,300
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+login,aapple2,password
+start_order,kroger,purchaseA,1,aapple2
+request_item,kroger,purchaseA,pot_roast,3,9
+make_store,fresh_market,11000
+start_order,kroger,purchaseA,1,ccherry4
+config list
+config show price-alert aapple2 
+config set price-alert aapple2 kroger cheesecake
+config show price-alert aapple2 
+config show price-alert ccherry4
+config set price-alert ccherry4 kroger ccherry4
+config show price-alert ccherry4 
+login,ccherry4,password
+start_order,kroger,purchaseB,1,ccherry4
+request_item,kroger,purchaseB,pot_roast,3,9
+config list
+config show price-alert ccherry4
+config set price-alert ccherry4 kroger cheesecake
+config show price-alert ccherry4 
+config show price-alert aapple2 
+stop

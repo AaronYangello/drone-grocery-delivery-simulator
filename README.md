@@ -1,5 +1,10 @@
 # Drone Grocery Delivery Simulator
 
+Contributors: Aaron Yangello, Casey Keyser, and Andrew Collins  
+_Git repository was migrated from student accounts and git history was lost._
+
+The Drone Grocery Delivery Simulator is a software project designed to prototype and simulate a drone-based grocery delivery service. It models the behavior of drones tasked with delivering grocery orders from a central hub to customer locations. The project focuses on implementing and testing delivery logistics, including route optimization, drone capabilities, and delivery efficiency under various conditions. Built as a standalone application, the simulator demonstrates the feasibility and challenges of autonomous delivery systems in real-world scenarios.
+
 ## Running Manually
 
 ### start server/client
@@ -73,7 +78,7 @@ All valid actions from A3 are supported in this application plus the following
 
 ### Config Commands
 
-| Setting         | Desciption                                                                                                  | Set Command                                                       | Show Command                                   |
+| Setting         | Description                                                                                                  | Set Command                                                       | Show Command                                   |
 |-----------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------------|
 | list            | Display list of `config` commands.                                                                          |                                                                   | `config list`                                  |
 | show            | Display current value of the setting.                                                                       |                                                                   | `config show [setting] [args]`                 |
